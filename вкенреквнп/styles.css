@@ -1,0 +1,228 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    color: #e91e63;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 1s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.flowers {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.flower {
+    width: 80px;
+    animation: float 3s ease-in-out infinite;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c2185b;
+}
+
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Стили для сердечек */
+.hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    top: -50px;
+    animation: fall linear infinite;
+    font-size: 24px;
+    color: #e91e63;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Медиа-запросы для адаптации */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .flower {
+        width: 60px;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    .heart {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .flower {
+        width: 50px;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+
+    .heart {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes fly {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+.flying-flower {
+    animation: fly 5s linear infinite;
+}
